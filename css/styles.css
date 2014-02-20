@@ -1,0 +1,42 @@
+body {
+	background-color: black;
+	padding: 0;
+	margin: 0;
+}
+
+.photos{
+	border: 5px solid white;
+	float: left;
+	line-height: 0;
+	margin: 10px;
+	position: relative;
+}
+	
+.photos:hover {
+  border-color: #FF0080 ;
+}
+
+p {
+	color: white;
+	font-family: Verdana;
+	font-size: 20px;
+	text-align: center;
+}
+.photos p {
+	display: none;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+
+}
+
+.photos:hover p{
+	display: block;
+	
+
+}
+
+html {
+	padding: 0;
+	margin: 0;
+}

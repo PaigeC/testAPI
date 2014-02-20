@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>In class demo</title>
+	</head>
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+<script>
+	$(document).ready(function() {
+		function getPage(page) {
+			$.get('https://api.500px.com/v1/photos?feature=fresh_today&sort=created_at&image_size=3&include_store=store_download&include_states=voted&consumer_key=3xA4TOc1RiserQUbHReFEGIewGzBydufkdpV9flF&rpp=100&page='+page, function(data) {
+				console.log(data);
+				var markup = '';
+				$.each(data.photos, function(key, photo) {
+					console.log(photo);
+					
+						markup += '<div class = "photos">';
+						markup += '<img src="' + photo.image_url + '"/>';
+						markup += '<p>' + photo.name + '</p>';
+						markup += '</div>';
+					
+
+				});
+				$('.f00px').append(markup);
+
+			});
+
+		}
+		getPage(1);
+		getPage(2);
+		getPage(3);
+		getPage(4);
+		getPage(5);
+
+	});
+	</script>
+</head>
+<body>
+	<div class="f00px">
+	</div>
+</body>
+</html>
+
+	}
+
